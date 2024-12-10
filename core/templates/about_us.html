@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="{%static 'core/css/style.about_us.css' %}" />
+{% endblock stylesheet %}
+
+{% block body %}
+    {% include "common/unauthorizer/navbar.html" %}
+
+    <section id="team">
+        <div class="student-card">
+            <div class="student-badge">SP</div>
+            <div class="student-name">Sandesh Pyakurel</div>
+            <div class="student-position">Computer Engineering Student</div>
+        </div>
+        
+        <div class="student-card">
+            <div class="student-badge">ST</div>
+            <div class="student-name">Susheel Thapa</div>
+            <div class="student-position">Computer Engineering Student</div>
+        </div>
+    </section>
+    {% include "common/unauthorizer/footer.html" %}
+{% endblock body %}
