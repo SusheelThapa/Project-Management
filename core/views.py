@@ -13,27 +13,20 @@ def landing_page(request):
     template = loader.get_template('landing_page.html')
     return HttpResponse(template.render(request=request))
 
-def about_page(request):
-    template = loader.get_template('about_us.html')
-    return HttpResponse(template.render(request=request))
 
 def signup_page(request):
-    template = loader.get_template('signup_page.html')
-
     if request.method == "POST":
-        form = CustomUserCreationForm(data=request.POST)
-
+        form = CustomUserCreationForm(request.POST)
         if form.is_valid():
-            
             form.save()
             return redirect('login')
         else:
-            print(form.errors)
-        
+            # If the form is not valid, still render the page with the form errors
+            return render(request, 'signup_page.html', {'form': form})
     else:
         form = CustomUserCreationForm()
+        return render(request, 'signup_page.html', {'form': form})
 
-        return HttpResponse(template.render(request=request, context={'form': form}))
 
 def user_login(request):
     if request.user.is_authenticated:
@@ -441,7 +434,7 @@ def add_project(request):
 
             return redirect('supervisor')
         else:
-            print(form.errors)        
+            print(form.errors)
     else:
         form = ProjectForm()
 
@@ -503,14 +496,14 @@ def get_updated_project_list(request):
             field.title for field in project.fields_of_research.all()]
         available_for = [
             available.title for available in project.available_for.all()]
-        
+
         total_application_count = 0
         if project.is_approved:
             total_application_count = len(
                 ProjectGroup.objects.filter(applied_project=project))
 
         project_list.append({
-            'id':project.topic_number,
+            'id': project.topic_number,
             'title': project.title,
             'description': project.description,
             'categories': categories,
@@ -692,7 +685,7 @@ def delete_project(request, id):
         return redirect('supervisor')
     else:
         return HttpResponse("Not Authorized")
-    
+
 
 @login_required
 def update_project(request, id):
@@ -719,4 +712,3 @@ def update_project(request, id):
             }
 
         return HttpResponse(template.render(request=request, context=context))
-

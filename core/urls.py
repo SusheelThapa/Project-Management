@@ -1,7 +1,6 @@
 from django.urls import path
 from .views import (
     landing_page,
-    about_page,
     user_login,
     signup_page,
     student_page,
@@ -32,7 +31,6 @@ urlpatterns = [
     path('', landing_page, name='landing-page'),
     path('login/', user_login, name='login'),
     path('signup/', signup_page, name='signup'),
-    path('about/',about_page,name='about-page'),
     path('student/', student_page, name='student'),
     path('coordinator/', coordinator_page, name='coordinator'),
     path('supervisor/', supervisor_page, name='supervisor'),
