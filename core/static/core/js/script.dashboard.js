@@ -34,46 +34,50 @@ document.addEventListener('DOMContentLoaded', function () {
                                 </a>
                             </td>
                             <td>${project.categories.join(', ')}</td>
-                            <td>
-                                <span class="status-badge ${project.is_approved ? 'status-approved' : (project.is_rejected ? 'status-rejected' : 'status-pending')}">
-                                    ${project.is_approved ? 'Approved' : (project.is_rejected ? 'Rejected' : 'Pending')}
-                                </span>
-                            </td>
                         `
-                        row.innerHTML += (project.get_role == 'Supervisor') ?
-                            (
-                                project.total_application_count > 0 ?
-                                    `
-                                    <td>
-                                        <a href="/supervisor/project/${project.id}/applications/">
-                                            View Application(${project.total_application_count})
-                                        </a>
-                                    </td>
-                                    `
-                                    : (project.is_approved && project.total_application_count > 0) ? `
-                                    <td>
-                                        No Application
-                                    </td>
-                                    `: `<td></td>`)
-                            : "";
-
-                        row.innerHTML += (project.get_role == "Supervisor" && !(project.is_approved) && !(project.is_rejected)) ?
-                            `
-                        <td>
-                            <a href="/project/${project.id}/update/" class="bold no-underline">
-                                <span class="status-badge update-button">Update</span>
-                            </a>
-                            <a href="/project/${project.id}/delete/" class="bold no-underline">
-                                <span class="status-badge delete-button">Delete</span>
-                            </a>
-                        </td>
-                        `: ``
+            
 
                         row.innerHTML += (project.get_role == "Coordinator") ?
                             `
                             <td>${project.supervisor}</td>
                             `: "";
 
+                        row.innerHTML += `
+                            <td>
+                                <span class="status-badge ${project.is_approved ? 'status-approved' : (project.is_rejected ? 'status-rejected' : 'status-pending')}">
+                                    ${project.is_approved ? 'Approved' : (project.is_rejected ? 'Rejected' : 'Pending')}
+                                </span>
+                            </td>
+                        `
+
+                        row.innerHTML += (project.get_role == 'Supervisor') ?
+                        (
+                            project.total_application_count > 0 ?
+                                `
+                                <td>
+                                    <a href="/supervisor/project/${project.id}/applications/">
+                                        View Application(${project.total_application_count})
+                                    </a>
+                                </td>
+                                `
+                                : (project.is_approved && project.total_application_count > 0) ? `
+                                <td>
+                                    No Application
+                                </td>
+                                `: `<td></td>`)
+                        : "";
+
+                    row.innerHTML += (project.get_role == "Supervisor" && !(project.is_approved) && !(project.is_rejected)) ?
+                        `
+                    <td>
+                        <a href="/project/${project.id}/update/" class="bold no-underline">
+                            <span class="status-badge update-button">Update</span>
+                        </a>
+                        <a href="/project/${project.id}/delete/" class="bold no-underline">
+                            <span class="status-badge delete-button">Delete</span>
+                        </a>
+                    </td>
+                    `: ``
                         row.innerHTML += (project.get_role == "Coordinator" && !project.is_approved && !project.is_rejected) ?
                             `
                             <td>

@@ -179,7 +179,7 @@
 
                                 {% if user.get_role == "Supervisor" %}
                                     <td>                                        
-                                        {% if project.total_application_count > 0%}
+                                        {% if project.total_application_count > 0 %}
                                             <a href="{% url 'view-applications' id=project.id %}" class="bold no-underline">
                                                 View Application({{project.total_application_count}})
                                             </a>
