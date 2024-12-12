@@ -4,20 +4,6 @@
 
 This project transforms the thesis project management system at Tribhuvan University into a dynamic web application using Django, enhancing collaboration and efficiency for all teachers and students.
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Current System](#current-system)
-- [Pain Points](#pain-points)
-- [Key Functionalities](#key-functionalities)
-- [Demo](#demo)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Credentials](#credentials)
-- [Recommended Workflow](#recommended-workflow)
-- [Contributing](#contributing)
-- [License](#license)
-
 ## Current System
 
 The current thesis project management process involves:
