@@ -62,3 +62,66 @@ https://github.com/user-attachments/assets/dc44dc16-8f2f-48dc-8d5e-23eb85cad44e
 1. Access the website at `http://127.0.0.1:8000/login` to view available thesis topics.
 2. For interactive functionalities, log in with your supervisor, student, or Unit Coordinator credentials.
 3. Supervisors can manage thesis topics, students can apply for projects, and the Unit Coordinator can oversee the entire process.
+
+## Credentials
+
+1. Coordinator
+   ```
+   charlas@gmail.com
+   Test@123
+   ```
+2. Supervisor
+
+   ```
+   sami@gmail.com
+   Test@123
+   ```
+
+   ```
+   yakub@gmail.com
+   Test@123
+   ```
+
+   ```
+   asif@gmail.com
+   Test@123
+   ```
+
+   ```
+   bharanidharan@gmail.com
+   Test@123
+   ```
+
+3. Student
+
+   ```
+   nirmal@gmail.com
+   Test@123
+   ```
+
+   ```
+   binish@gmail.com
+   Test@123
+   ```
+
+   ```
+   sofian@gmail.com
+   Test@123
+   ```
+
+   ```
+   preson@gmail.com
+   Test@123
+   ```
+
+## Recommended Workflow
+
+1. Login via the Coordinator Account(**charlas@gmail.com**) so that you see the option to accept or reject project added by different supervisor.
+2. Then, accept some of the project and reject some project. (_Accept one project of the Sami Azam and Reject another project of Sami Azam_)
+3. Logout by clicking the usef profile badge which will display a tool tip to logout
+4. Login via supervisor account(**sami@gmail.com**)
+   5.You will see one project has the status **approved** and another has **rejected**. _But you cannot see any student application._
+5. Logout and Login via Student account(**nirmal@gmail.com**). You will see an option to create group and join group. Click on create group and create a group with name **Team Alpha**. Then you will be able to see a dashboard where you can apply for the project.
+6. Logout and Login via another Student account(**binish@gmail.com**)
+7. Click on join group and join the **Team Alpha** group. Then click and apply to apply for the following project(*Make sure to apply the project with supervisor **Sami Azam***).
+8. Logout and Login via Sami Azam. And you will notice a student application on one project and you can view the application too.
